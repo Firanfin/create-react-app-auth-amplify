@@ -7,6 +7,12 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
 class App extends Component {
+  componentDidMount() {
+    Auth.currentAuthenticatedUser().then(user => {
+      console.log(user)
+    })
+  }
+
   render() {
     return (
       <div className="App">
